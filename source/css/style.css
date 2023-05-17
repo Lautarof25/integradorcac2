@@ -1,0 +1,101 @@
+:root {
+    --green: #29a744;
+    --darkBlue: #353a40;
+    --lightBlue: #1e5372;
+    --formButton: #96c93e;
+    --warning: #ffbb3e;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+html {
+    scroll-padding: 80px 0 0 0;
+}
+
+/* Colores modificados */
+.bg-primary {
+    background-color: var(--darkBlue) !important;
+}
+
+.text-success {
+    color: var(--green) !important;
+}
+
+.btn-success {
+    background-color: var(--green);
+}
+
+.btn-green {
+    background-color: var(--formButton);
+}
+
+.btn-green:hover {
+    background-color: var(--green);
+}
+
+.bg-celeste {
+    background-color: #cce5ff!important;
+}
+.bg-success {
+    background-color: var(--formButton)!important;
+}
+.bg-warning {
+    background-color: var(--warning)!important;
+}
+
+/* Generales */
+footer {
+    background: rgb(28, 54, 67);
+    background: linear-gradient(100deg, var(--darkBlue) 0%, var(--lightBlue) 100%);
+    height: fit-content;
+}
+
+.navbar__img {
+    width: 100px;
+}
+
+/* Medidas */
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.w-900 {
+    max-width: 900px;
+}
+
+.w-50px {
+    width: 120px !important;
+}
+
+.container-xxl {
+    max-width: 1440px!important;
+}
+
+.fs-10{
+    font-size: 18px;
+}
+
+/* Posiciones hero */
+.bottom-25 {
+    bottom: 25%;
+}
+
+.me-5 {
+    margin-right: 150px !important;
+}
+
+.start-50 {
+    left: 30% !important;
+}
+
+.w-50 {
+    width: 60% !important;
+}
+@media (max-width: 540px) { 
+    .gap-5{
+        gap: 1rem!important;
+    }
+}
