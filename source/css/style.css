@@ -57,6 +57,11 @@ footer {
     width: 100px;
 }
 
+.cursor_not_allowed {
+    cursor: not-allowed!important;
+    pointer-events: none;
+}
+
 /* Medidas */
 .object-fit-cover {
     object-fit: cover;

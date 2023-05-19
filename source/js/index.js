@@ -1,20 +1,18 @@
-
-// Traigo el campo cantidad 
+// Comprobando campos
+const camposIdentidad = document.querySelector("#camposIdentidad")
+const nombre = document.querySelector("#nombre")
+const apellido = document.querySelector("#apellido")
+const correo = document.querySelector("#correo")
 let cantidad = document.querySelector("#cantidad")
-// Traigo el campo categoría y su valor
 let categoria = document.querySelector("#categoria")
-// Traigo el campo total a pagar y su valor
 let totalPagar = document.querySelector("#totalPagar")
-// Traigo el botón resumen
 const resumen = document.querySelector("#resumen")
-// Traigo el botón borrar
 const borrar = document.querySelector("#borrar")
-// Traigo el id default de cateogría
 const def = document.querySelector("#default").value
 // Agrego el escuchador
 
 function resumenAPagar() {
-    // Hago el calculo
+    // Hago el calculo sin descuento
     let resultadoSinDescuento = Number(cantidad.value) * 200
     // Hago el cálculo con descuento
     let resultadoFinal = categoria.value === "Estudiante"
@@ -22,25 +20,66 @@ function resumenAPagar() {
         : categoria.value === "Trainee"
             ? resultadoSinDescuento * 0.5
             : resultadoSinDescuento * 0.85
-    if (cantidad.value != 0 || cantidad.value != "") {
-        totalPagar.value = `Total a Pagar: $${resultadoFinal}`
-        totalPagar.classList.add("bg-success", "text-white")
-        totalPagar.classList.remove("bg-warning")
+    if (comprobarCantidad(cantidad) ) {
+        resultadoCorrecto(resultadoFinal)
     }
     else {
-        totalPagar.placeholder = `Debe ingresar una cantidad`
-        totalPagar.classList.remove("bg-success", "text-white")
-        totalPagar.classList.add("bg-warning")
+        resultadoIncorrecto()
     }
 }
 
+// nombre.addEventListener("change",comprobarFormulario)
+// apellido.addEventListener("change",comprobarFormulario)
+// correo.addEventListener("change",comprobarFormulario)
 
-function resetCantidad(){
+// function comprobarFormulario(){
+//     if(nombre.value != "" && apellido.value != "" && correo.value != ""){
+//         cantidad.disabled = false
+//         categoria.disabled = false
+//         resumen.classList.remove("cursor_not_allowed")
+//         borrar.classList.remove("cursor_not_allowed")
+//     }else {
+//         cantidad.disabled = true
+//         categoria.disabled = true
+//         resumen.classList.add("cursor_not_allowed")
+//         borrar.classList.add("cursor_not_allowed")
+//     }
+// }
+
+function comprobarCantidad(cantidad){
+    // Devuelve true si el campo cantidad es correcto
+    return cantidad.value >= 1 && 
+          cantidad.value != "" && 
+          Number.isInteger(Number(cantidad.value));
+}
+
+function resultadoCorrecto(valorFinal){
+    totalPagar.value = `Total a Pagar: $${valorFinal}`
+    totalPagar.classList.add("bg-success", "text-white")
+    totalPagar.classList.remove("bg-warning")
+}
+
+function resultadoIncorrecto(){
+    totalPagar.placeholder = `Debe ingresar una cantidad correcta`
+    totalPagar.classList.remove("bg-success", "text-white")
+    totalPagar.classList.add("bg-warning")
+}
+
+function resetSinCategoria() {
     totalPagar.placeholder = "Total a Pagar: $"
     totalPagar.value = ""
     cantidad.value = ""
     totalPagar.classList.remove("bg-success", "text-white")
     totalPagar.classList.remove("bg-warning")
+}
+
+function resetSinCantidad() {
+    if (totalPagar.value != "") {
+        totalPagar.placeholder = "Total a Pagar: $"
+        totalPagar.value = ""
+        totalPagar.classList.remove("bg-success", "text-white")
+        totalPagar.classList.remove("bg-warning")
+    }
 }
 
 function borrarCampos() {
@@ -53,5 +92,6 @@ function borrarCampos() {
 }
 
 resumen.addEventListener("click", resumenAPagar)
-categoria.addEventListener("change", resetCantidad)
+categoria.addEventListener("change", resetSinCategoria)
+cantidad.addEventListener("change", resetSinCantidad)
 borrar.addEventListener("click", borrarCampos)
