@@ -60,6 +60,7 @@ footer {
 .cursor_not_allowed {
     cursor: not-allowed!important;
     pointer-events: none;
+    background-color: #a3a3a3;
 }
 
 /* Medidas */

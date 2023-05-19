@@ -1,14 +1,41 @@
-// Comprobando campos
-const camposIdentidad = document.querySelector("#camposIdentidad")
-const nombre = document.querySelector("#nombre")
-const apellido = document.querySelector("#apellido")
-const correo = document.querySelector("#correo")
+// 
+let nombre = document.querySelector("#nombre")
+let apellido = document.querySelector("#apellido")
+let correo = document.querySelector("#correo")
 let cantidad = document.querySelector("#cantidad")
 let categoria = document.querySelector("#categoria")
 let totalPagar = document.querySelector("#totalPagar")
 const resumen = document.querySelector("#resumen")
 const borrar = document.querySelector("#borrar")
-const def = document.querySelector("#default").value
+const def = document.querySelector("#default")
+const campos = document.querySelector('#campos')
+// Desactivo los campos cantidad, categoria y botones 
+cantidad.disabled = true
+categoria.disabled = true
+resumen.classList.add("cursor_not_allowed")
+borrar.classList.add("cursor_not_allowed")
+// Compruebo que los campos nombre, apellido y correo estén completados
+campos.addEventListener("input", function () {
+    let nombreVacio = nombre.value.trim() === ""
+    let apellidoVacio = apellido.value.trim() === ""
+    let correoVacio = correo.value.trim() === ""
+    let correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (nombreVacio && apellidoVacio && correoVacio) {
+        if (correoValido.test(correo.value.trim())) {
+            cantidad.disabled = true
+            categoria.disabled = true
+            resumen.classList.add("cursor_not_allowed")
+            borrar.classList.add("cursor_not_allowed")
+        }
+    } else {
+        cantidad.disabled = false
+        categoria.disabled = false
+        resumen.classList.remove("cursor_not_allowed")
+        borrar.classList.remove("cursor_not_allowed")
+    }
+})
+
 // Agrego el escuchador
 
 function resumenAPagar() {
@@ -20,7 +47,7 @@ function resumenAPagar() {
         : categoria.value === "Trainee"
             ? resultadoSinDescuento * 0.5
             : resultadoSinDescuento * 0.85
-    if (comprobarCantidad(cantidad) ) {
+    if (comprobarCantidad(cantidad)) {
         resultadoCorrecto(resultadoFinal)
     }
     else {
@@ -28,54 +55,35 @@ function resumenAPagar() {
     }
 }
 
-// nombre.addEventListener("change",comprobarFormulario)
-// apellido.addEventListener("change",comprobarFormulario)
-// correo.addEventListener("change",comprobarFormulario)
-
-// function comprobarFormulario(){
-//     if(nombre.value != "" && apellido.value != "" && correo.value != ""){
-//         cantidad.disabled = false
-//         categoria.disabled = false
-//         resumen.classList.remove("cursor_not_allowed")
-//         borrar.classList.remove("cursor_not_allowed")
-//     }else {
-//         cantidad.disabled = true
-//         categoria.disabled = true
-//         resumen.classList.add("cursor_not_allowed")
-//         borrar.classList.add("cursor_not_allowed")
-//     }
-// }
-
-function comprobarCantidad(cantidad){
+function comprobarCantidad(cantidad) {
     // Devuelve true si el campo cantidad es correcto
-    return cantidad.value >= 1 && 
-          cantidad.value != "" && 
-          Number.isInteger(Number(cantidad.value));
+    return cantidad.value >= 1 &&
+        cantidad.value != "" &&
+        Number.isInteger(Number(cantidad.value));
 }
 
-function resultadoCorrecto(valorFinal){
+function resultadoCorrecto(valorFinal) {
     totalPagar.value = `Total a Pagar: $${valorFinal}`
     totalPagar.classList.add("bg-success", "text-white")
     totalPagar.classList.remove("bg-warning")
 }
 
-function resultadoIncorrecto(){
+function resultadoIncorrecto() {
     totalPagar.placeholder = `Debe ingresar una cantidad correcta`
     totalPagar.classList.remove("bg-success", "text-white")
     totalPagar.classList.add("bg-warning")
 }
 
 function resetSinCategoria() {
-    totalPagar.placeholder = "Total a Pagar: $"
-    totalPagar.value = ""
-    cantidad.value = ""
-    totalPagar.classList.remove("bg-success", "text-white")
-    totalPagar.classList.remove("bg-warning")
+    if (totalPagar.value != "") {
+        totalPagar.value = ""
+        totalPagar.classList.remove("bg-success", "text-white")
+        totalPagar.classList.remove("bg-warning")
+    }
 }
 
 function resetSinCantidad() {
     if (totalPagar.value != "") {
-        totalPagar.placeholder = "Total a Pagar: $"
         totalPagar.value = ""
         totalPagar.classList.remove("bg-success", "text-white")
         totalPagar.classList.remove("bg-warning")
@@ -83,10 +91,10 @@ function resetSinCantidad() {
 }
 
 function borrarCampos() {
-    totalPagar.placeholder = "Total a Pagar: $"
     totalPagar.value = ""
+    totalPagar.placeholder = "Total a Pagar: $"
     cantidad.value = ""
-    categoria.value = def
+    categoria.value = def.value
     totalPagar.classList.remove("bg-success", "text-white")
     totalPagar.classList.remove("bg-warning")
 }
