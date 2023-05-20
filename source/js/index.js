@@ -49,6 +49,21 @@ form.addEventListener("keydown", function () {
             volverACorreo()
         }
     }
+    if(nombreVacio){
+        nombre.classList.add("incomplete")
+    }else{
+        nombre.classList.remove("incomplete")
+    }
+    if(apellidoVacio){
+        apellido.classList.add("incomplete")
+    }else{
+        apellido.classList.remove("incomplete")
+    }
+    if(!validarEmail()){
+        correo.classList.add("incomplete")
+    }else{
+        correo.classList.remove("incomplete")
+    }
 })
 
 function volverACorreo(){

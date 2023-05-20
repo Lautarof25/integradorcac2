@@ -48,6 +48,12 @@ html {
     background-color: var(--warning) !important;
 }
 
+.incomplete {
+    outline: red!important;
+    border:1px solid red!important;
+    box-shadow: 0 0 10px #ff0000!important;
+}
+
 .disabled {
     background-color: #a3a3a3 !important;
 }
