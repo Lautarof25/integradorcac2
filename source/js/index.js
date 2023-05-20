@@ -105,16 +105,6 @@ function resultadoIncorrecto() {
     cantidad.focus()
 }
 
-function resetSinCategoria() {
-    if (totalPagar.value != "")
-        totalPagarOff()
-}
-
-function resetSinCantidad() {
-    if (totalPagar.value != "")
-        totalPagarOff()
-}
-
 function borrarCampos() {
     totalPagarOff()
     resetCantidad()
@@ -141,6 +131,6 @@ function totalPagarOff() {
 }
 
 resumen.addEventListener("click", resumenAPagar)
-categoria.addEventListener("change", resetSinCategoria)
-cantidad.addEventListener("change", resetSinCantidad)
+categoria.addEventListener("change", totalPagarOff)
+cantidad.addEventListener("change", totalPagarOff)
 borrar.addEventListener("click", borrarCampos)
