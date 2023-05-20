@@ -234,13 +234,14 @@
                 <div id="campos" class="row">
                     <div class="mb-3 col-sm-6">
                         <input type="text" class="form-control nombre" id="nombre" aria-describedby="nombre"
-                            placeholder="Nombre" required >
+                            placeholder="Nombre" required>
                     </div>
                     <div class="mb-3 col-sm-6">
                         <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
                     </div>
                     <div class="mb-3 col-sm-12">
-                        <input type="email" class="form-control" id="correo" placeholder="Correo" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required>
+                        <input type="email" class="form-control" id="correo" placeholder="Correo"
+                            pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required>
                     </div>
                     <label for="cantidad" class="form-label col-sm-6">Cantidad
                         <div class="mb-3 ">
@@ -263,11 +264,9 @@
                             placeholder="Total a Pagar: $" disabled>
                     </div>
 
-                    <div class="mb-3 col-sm-6">
-                        <button class="btn btn-green w-100 text-white" type="reset" id="borrar">Borrar</button>
-                    </div>
-                    <div class="mb-3 col-sm-6">
-                        <button class="btn btn-green w-100 text-white" type="button" id="resumen">Resumen</button>
+                    <div class="mb-3 col-sm-12 d-sm-flex gap-2">
+                        <button class="btn btn-green w-100 order-1 text-white m-1" type="button" id="resumen">Resumen</button>
+                        <button class="btn btn-green w-100 text-white m-1" type="reset" id="borrar">Borrar</button>
                     </div>
                 </div>
             </form>
