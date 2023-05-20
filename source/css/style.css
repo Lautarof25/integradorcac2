@@ -83,6 +83,9 @@ footer {
 .fs-10{
     font-size: 18px;
 }
+.btn-green:focus{
+    background-color: var(--green);
+}
 
 /* Posiciones hero */
 .bottom-25 {

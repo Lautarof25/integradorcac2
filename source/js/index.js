@@ -1,5 +1,6 @@
 // 
 let nombre = document.querySelector("#nombre")
+let nombreClase = document.querySelector(".nombre")
 let apellido = document.querySelector("#apellido")
 let correo = document.querySelector("#correo")
 let cantidad = document.querySelector("#cantidad")
@@ -97,6 +98,11 @@ function borrarCampos() {
     categoria.value = def.value
     totalPagar.classList.remove("bg-success", "text-white")
     totalPagar.classList.remove("bg-warning")
+    cantidad.disabled = true
+    categoria.disabled = true
+    resumen.classList.add("cursor_not_allowed")
+    borrar.classList.add("cursor_not_allowed")
+    nombreClase.focus()
 }
 
 resumen.addEventListener("click", resumenAPagar)
