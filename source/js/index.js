@@ -10,6 +10,7 @@ const resumen = document.querySelector("#resumen")
 const borrar = document.querySelector("#borrar")
 const def = document.querySelector("#default")
 const campos = document.querySelector('#campos')
+const form = document.querySelector("#form")
 // Desactivo los campos cantidad, categoria y botones 
 function camposTickets(accion) {
     if (accion == 0) {
@@ -27,28 +28,34 @@ function camposTickets(accion) {
 // Ejecuto apenas carga la página
 camposTickets(0)
 // Compruebo que los campos nombre, apellido y correo estén completados
-campos.addEventListener("input", function (e) {
-    let nombreVacio = nombre.value.trim() === ""
-    let apellidoVacio = apellido.value.trim() === ""
-    let correoVacio = correo.value.trim() === ""
+form.addEventListener("input", function () {
+    let nombreVacio = nombre.value === ""
+    let apellidoVacio = apellido.value === ""
+    let correoVacio = correo.value === ""
 
-    if (nombreVacio && apellidoVacio && correoVacio) {
+    if (nombreVacio || apellidoVacio || correoVacio) {
         camposTickets(0)
         totalPagarOff()
         resetCantidad()
         resetCategoria()
+        console.log("Desactivado")
     }
-    else
-        if (validarEmail())
+    else{
+        if (validarEmail()) {
             camposTickets(1)
+            console.log("Activado")
+        }
         else {
             camposTickets(0)
             totalPagarOff()
+            console.log("Desactivado")
         }
+    }
+    console.log(nombreVacio,apellidoVacio,correoVacio)
 })
 
-correo.addEventListener("onchange", function(){
-    if(validarEmail()){
+correo.addEventListener("onchange", function () {
+    if (validarEmail()) {
         correo.focus()
     }
 })

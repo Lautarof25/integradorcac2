@@ -37,17 +37,21 @@ html {
 }
 
 .bg-celeste {
-    background-color: #cce5ff!important;
+    background-color: #cce5ff !important;
 }
+
 .bg-success {
-    background-color: var(--formButton)!important;
+    background-color: var(--formButton) !important;
 }
+
 .bg-warning {
-    background-color: var(--warning)!important;
+    background-color: var(--warning) !important;
 }
+
 .disabled {
-    background-color: #a3a3a3!important;
+    background-color: #a3a3a3 !important;
 }
+
 /* Generales */
 footer {
     background: rgb(28, 54, 67);
@@ -73,13 +77,14 @@ footer {
 }
 
 .container-xxl {
-    max-width: 1440px!important;
+    max-width: 1440px !important;
 }
 
-.fs-10{
+.fs-10 {
     font-size: 18px;
 }
-.btn-green:focus{
+
+.btn-green:focus {
     background-color: var(--green);
 }
 
@@ -99,8 +104,9 @@ footer {
 .w-50 {
     width: 60% !important;
 }
-@media (max-width: 540px) { 
-    .gap-5{
-        gap: 1rem!important;
+
+@media (max-width: 540px) {
+    .gap-5 {
+        gap: 1rem !important;
     }
 }
