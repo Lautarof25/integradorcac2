@@ -43,7 +43,7 @@ campos.addEventListener("input", function (e) {
             camposTickets(1)
         else {
             camposTickets(0)
-            e.stopImmediatePropagation();
+            totalPagarOff()
         }
 })
 
@@ -55,8 +55,6 @@ function validarEmail() {
         return false;
     }
 }
-
-// Agrego el escuchador
 
 function resumenAPagar() {
     // Hago el calculo sin descuento
