@@ -28,7 +28,7 @@ function camposTickets(accion) {
 // Ejecuto apenas carga la página
 camposTickets(0)
 // Compruebo que los campos nombre, apellido y correo estén completados
-form.addEventListener("input", function () {
+form.addEventListener("keydown", function () {
     let nombreVacio = nombre.value === ""
     let apellidoVacio = apellido.value === ""
     let correoVacio = correo.value === ""
@@ -38,11 +38,11 @@ form.addEventListener("input", function () {
         totalPagarOff()
         resetCantidad()
         resetCategoria()
+        volverACorreo()
     }
     else{
-        if (validarEmail()) {
+        if (validarEmail()) 
             camposTickets(1)
-        }
         else {
             camposTickets(0)
             totalPagarOff()
@@ -53,19 +53,16 @@ form.addEventListener("input", function () {
 
 function volverACorreo(){
     resumen.addEventListener("focus", function(){
-        if(resumen.classList.contains("disabled")){
+        if(resumen.classList.contains("disabled"))
             correo.focus()
-        }
     })
 }
 
 function validarEmail() {
     let correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (correoValido.test(correo.value)) {
+    if (correoValido.test(correo.value))
         return true;
-    } else {
-        return false;
-    }
+    return false;
 }
 
 function resumenAPagar() {
@@ -77,12 +74,10 @@ function resumenAPagar() {
         : categoria.value === "Trainee"
             ? resultadoSinDescuento * 0.5
             : resultadoSinDescuento * 0.85
-    if (comprobarCantidad(cantidad)) {
+    if (comprobarCantidad(cantidad))
         resultadoCorrecto(resultadoFinal)
-    }
-    else {
+    else 
         resultadoIncorrecto()
-    }
 }
 
 function comprobarCantidad(cantidad) {
@@ -102,18 +97,18 @@ function resultadoIncorrecto() {
     totalPagar.placeholder = "Debe ingresar una cantidad correcta"
     totalPagar.classList.remove("bg-success", "text-white")
     totalPagar.classList.add("bg-warning")
+    cantidad.value = ""
+    cantidad.focus()
 }
 
 function resetSinCategoria() {
-    if (totalPagar.value != "") {
+    if (totalPagar.value != "")
         totalPagarOff()
-    }
 }
 
 function resetSinCantidad() {
-    if (totalPagar.value != "") {
+    if (totalPagar.value != "")
         totalPagarOff()
-    }
 }
 
 function borrarCampos() {
