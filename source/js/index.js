@@ -11,31 +11,42 @@ const borrar = document.querySelector("#borrar")
 const def = document.querySelector("#default")
 const campos = document.querySelector('#campos')
 // Desactivo los campos cantidad, categoria y botones 
-cantidad.disabled = true
-categoria.disabled = true
-resumen.classList.add("cursor_not_allowed")
-borrar.classList.add("cursor_not_allowed")
-// Compruebo que los campos nombre, apellido y correo estén completados
-campos.addEventListener("input", function () {
-    let nombreVacio = nombre.value.trim() === ""
-    let apellidoVacio = apellido.value.trim() === ""
-    let correoVacio = correo.value.trim() === ""
-    let correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (nombreVacio && apellidoVacio && correoVacio) {
-        if (correoValido.test(correo.value.trim())) {
-            cantidad.disabled = true
-            categoria.disabled = true
-            resumen.classList.add("cursor_not_allowed")
-            borrar.classList.add("cursor_not_allowed")
-        }
+function camposTickets(accion) {
+    if (accion == 0) {
+        cantidad.disabled = true
+        categoria.disabled = true
+        resumen.classList.add("cursor_not_allowed")
+        borrar.classList.add("cursor_not_allowed")
     } else {
         cantidad.disabled = false
         categoria.disabled = false
         resumen.classList.remove("cursor_not_allowed")
         borrar.classList.remove("cursor_not_allowed")
     }
+}
+// Ejecuto apenas carga la página
+camposTickets(0)
+// Compruebo que los campos nombre, apellido y correo estén completados
+campos.addEventListener("input", function () {
+    let nombreVacio = nombre.value.trim() === ""
+    let apellidoVacio = apellido.value.trim() === ""
+    let correoVacio = correo.value.trim() === ""
+
+    if (nombreVacio && apellidoVacio && correoVacio)
+        camposTickets(0)
+    else
+        if (validarEmail())
+            camposTickets(1)
 })
+
+function validarEmail() {
+    let correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (correoValido.test(correo.value)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 // Agrego el escuchador
 
