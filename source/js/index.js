@@ -38,27 +38,26 @@ form.addEventListener("input", function () {
         totalPagarOff()
         resetCantidad()
         resetCategoria()
-        console.log("Desactivado")
     }
     else{
         if (validarEmail()) {
             camposTickets(1)
-            console.log("Activado")
         }
         else {
             camposTickets(0)
             totalPagarOff()
-            console.log("Desactivado")
+            volverACorreo()
         }
     }
-    console.log(nombreVacio,apellidoVacio,correoVacio)
 })
 
-correo.addEventListener("onchange", function () {
-    if (validarEmail()) {
-        correo.focus()
-    }
-})
+function volverACorreo(){
+    resumen.addEventListener("focus", function(){
+        if(resumen.classList.contains("disabled")){
+            correo.focus()
+        }
+    })
+}
 
 function validarEmail() {
     let correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
