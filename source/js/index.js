@@ -15,28 +15,36 @@ function camposTickets(accion) {
     if (accion == 0) {
         cantidad.disabled = true
         categoria.disabled = true
-        resumen.classList.add("cursor_not_allowed")
-        borrar.classList.add("cursor_not_allowed")
+        resumen.classList.add("disabled")
+        borrar.classList.add("disabled")
     } else {
         cantidad.disabled = false
         categoria.disabled = false
-        resumen.classList.remove("cursor_not_allowed")
-        borrar.classList.remove("cursor_not_allowed")
+        resumen.classList.remove("disabled")
+        borrar.classList.remove("disabled")
     }
 }
 // Ejecuto apenas carga la página
 camposTickets(0)
 // Compruebo que los campos nombre, apellido y correo estén completados
-campos.addEventListener("input", function () {
+campos.addEventListener("input", function (e) {
     let nombreVacio = nombre.value.trim() === ""
     let apellidoVacio = apellido.value.trim() === ""
     let correoVacio = correo.value.trim() === ""
 
-    if (nombreVacio && apellidoVacio && correoVacio)
+    if (nombreVacio && apellidoVacio && correoVacio) {
         camposTickets(0)
+        totalPagarOff()
+        resetCantidad()
+        resetCategoria()
+    }
     else
         if (validarEmail())
             camposTickets(1)
+        else {
+            camposTickets(0)
+            e.stopImmediatePropagation();
+        }
 })
 
 function validarEmail() {
@@ -81,39 +89,46 @@ function resultadoCorrecto(valorFinal) {
 }
 
 function resultadoIncorrecto() {
-    totalPagar.placeholder = `Debe ingresar una cantidad correcta`
+    totalPagar.placeholder = "Debe ingresar una cantidad correcta"
     totalPagar.classList.remove("bg-success", "text-white")
     totalPagar.classList.add("bg-warning")
 }
 
 function resetSinCategoria() {
     if (totalPagar.value != "") {
-        totalPagar.value = ""
-        totalPagar.classList.remove("bg-success", "text-white")
-        totalPagar.classList.remove("bg-warning")
+        totalPagarOff()
     }
 }
 
 function resetSinCantidad() {
     if (totalPagar.value != "") {
-        totalPagar.value = ""
-        totalPagar.classList.remove("bg-success", "text-white")
-        totalPagar.classList.remove("bg-warning")
+        totalPagarOff()
     }
 }
 
 function borrarCampos() {
+    totalPagarOff()
+    resetCantidad()
+    resetCategoria()
+    resumen.classList.add("disabled")
+    borrar.classList.add("disabled")
+    nombreClase.focus()
+}
+
+function resetCategoria(){
+    categoria.value = def.value
+    categoria.disabled = true
+}
+function resetCantidad(){
+    cantidad.value = ""
+    cantidad.disabled = true
+}
+
+function totalPagarOff() {
     totalPagar.value = ""
     totalPagar.placeholder = "Total a Pagar: $"
-    cantidad.value = ""
-    categoria.value = def.value
     totalPagar.classList.remove("bg-success", "text-white")
     totalPagar.classList.remove("bg-warning")
-    cantidad.disabled = true
-    categoria.disabled = true
-    resumen.classList.add("cursor_not_allowed")
-    borrar.classList.add("cursor_not_allowed")
-    nombreClase.focus()
 }
 
 resumen.addEventListener("click", resumenAPagar)

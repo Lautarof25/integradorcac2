@@ -45,7 +45,9 @@ html {
 .bg-warning {
     background-color: var(--warning)!important;
 }
-
+.disabled {
+    background-color: #a3a3a3!important;
+}
 /* Generales */
 footer {
     background: rgb(28, 54, 67);
@@ -55,12 +57,6 @@ footer {
 
 .navbar__img {
     width: 100px;
-}
-
-.cursor_not_allowed {
-    cursor: not-allowed!important;
-    pointer-events: none;
-    background-color: #a3a3a3;
 }
 
 /* Medidas */
