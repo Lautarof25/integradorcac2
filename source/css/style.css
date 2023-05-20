@@ -70,6 +70,10 @@ footer {
 }
 
 /* Medidas */
+.card-w {
+    max-width: 14rem!important;
+}
+
 .object-fit-cover {
     object-fit: cover;
 }

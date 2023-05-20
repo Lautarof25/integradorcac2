@@ -10,6 +10,8 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="./source/css/style.css">
     <link rel="icon" href="./source/img/codoacodo.webp">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -98,7 +100,7 @@
             <p class="text-center text-uppercase">Conoce a los <br><span class="fs-1">oradores</span></p>
             <div class="row row-cols-1 row-cols-md-3 g-3">
                 <div class="col">
-                    <div class="card">
+                    <div class="card" data-aos="fade-down-right">
                         <img src="./source/img/steve_jobs.webp" class="card-img-top" alt="steve_jobs">
                         <div class="card-body">
                             <button type="button" class="btn btn-warning btn-sm">JavaScript</button>
@@ -110,7 +112,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up-right">
                         <img src="./source/img/bill_gates.webp" class="card-img-top" alt="bill_gates">
                         <div class="card-body">
                             <button type="button" class="btn btn-warning btn-sm">JavaScript</button>
@@ -122,7 +124,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up-left">
                         <img src="./source/img/ada_lovelace.webp" class="card-img-top" alt="ada_lovelace">
                         <div class="card-body">
                             <button type="button" class="btn btn-secondary btn-sm">Negocios</button>
@@ -138,7 +140,7 @@
         </section>
 
 
-        <section id="publi">
+        <section id="publi" data-aos="zoom-in">
             <div class="container-xxl">
                 <div class="row row-cols-sm-2">
                     <img class="p-0 object-fit-cover" src="./source/img/honolulu.webp" alt="honolulu">
@@ -157,7 +159,7 @@
             </div>
         </section>
 
-        <section id="formulario" class="container w-sm-50 p-2 w-900">
+        <section id="formulario" class="container w-sm-50 p-2 w-900" data-aos="zoom-in-down">
 
             <p class="text-center text-uppercase">Conviértete en un <br><span class="fs-1">orador</span></p>
             <p class="text-center">Anótate como orador para dar una <a
@@ -166,7 +168,8 @@
                 quieres hablar!</p>
             <form class="row align-items-center">
                 <div class="mb-3 col-sm-6">
-                    <input type="text" class="form-control" id="nombreOr" aria-describedby="nombre" placeholder="Nombre">
+                    <input type="text" class="form-control" id="nombreOr" aria-describedby="nombre"
+                        placeholder="Nombre">
                 </div>
                 <div class="mb-3 col-sm-6">
                     <input type="text" class="form-control" id="apellidoOr" placeholder="Apellido">
@@ -182,7 +185,7 @@
             </form>
         </section>
 
-        <section id="publi">
+        <section id="publi" data-aos="flip-down">
             <div class="container-xxl">
                 <div class="row row-cols-sm-2">
                     <img class="p-0 object-fit-cover" src="./source/img/honolulu.webp" alt="honolulu">
@@ -204,15 +207,15 @@
 
         <section id="tickets" class="container w-sm-50 p-2 w-900">
             <div class="row d-flex justify-content-evenly gap-2">
-                <div class="card text-center rounded-0 border-primary mb-3" data-mdb-toggle="animation" data-mdb-animation-reset="true" data-mdb-animation="slide-right" style="max-width: 14rem;">
-                    <div class="card-body  text-secondary">
+                <div class="card text-center rounded-0 border-primary mb-3 card-w " data-aos="flip-down">
+                    <div class="card-body text-secondary">
                         <h5 class="card-title">Estudiante</h5>
                         <p class="card-text text-dark">Tienen un descuento</p>
                     </div>
                     <p class="fw-bold p-2">80%</p>
                     <p class="text-muted fs-10">* presentar documentación</p>
                 </div>
-                <div class="card text-center rounded-0 border-info mb-3" style="max-width: 14rem;">
+                <div class="card text-center rounded-0 border-info mb-3 card-w" data-aos="flip-down">
                     <div class="card-body text-secondary">
                         <h5 class="card-title">Trainee</h5>
                         <p class="card-text text-dark">Tienen un descuento</p>
@@ -220,7 +223,7 @@
                     <p class="fw-bold p-2">50%</p>
                     <p class="text-muted fs-10">* presentar documentación</p>
                 </div>
-                <div class="card text-center rounded-0 border-warning mb-3" style="max-width: 14rem;">
+                <div class="card text-center rounded-0 border-warning mb-3 card-w" data-aos="flip-down">
                     <div class="card-body text-secondary">
                         <h5 class="card-title">Junior</h5>
                         <p class="card-text text-dark">Tienen un descuento</p>
@@ -240,8 +243,7 @@
                         <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
                     </div>
                     <div class="mb-3 col-sm-12">
-                        <input type="email" class="form-control" id="correo" placeholder="Correo"
-                             required>
+                        <input type="email" class="form-control" id="correo" placeholder="Correo" required>
                     </div>
                     <label for="cantidad" class="form-label col-sm-6">Cantidad
                         <div class="mb-3 ">
@@ -264,8 +266,10 @@
                             placeholder="Total a Pagar: $" disabled>
                     </div>
                     <div class="mb-3 col-sm-12 d-sm-flex gap-4">
-                        <button class="btn btn-green w-100 order-1 mb-1 text-white disabled" type="button" id="resumen">Resumen</button>
-                        <button class="btn btn-green w-100 mb-1 text-white disabled" type="reset" id="borrar">Borrar</button>
+                        <button class="btn btn-green w-100 order-1 mb-1 text-white disabled" type="button"
+                            id="resumen">Resumen</button>
+                        <button class="btn btn-green w-100 mb-1 text-white disabled" type="reset"
+                            id="borrar">Borrar</button>
                     </div>
                 </div>
             </form>
@@ -291,6 +295,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./source/js/app.js"></script>
 </body>
 
 </html>
