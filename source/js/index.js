@@ -47,6 +47,12 @@ campos.addEventListener("input", function (e) {
         }
 })
 
+correo.addEventListener("onchange", function(){
+    if(validarEmail()){
+        correo.focus()
+    }
+})
+
 function validarEmail() {
     let correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (correoValido.test(correo.value)) {
@@ -113,11 +119,11 @@ function borrarCampos() {
     nombreClase.focus()
 }
 
-function resetCategoria(){
+function resetCategoria() {
     categoria.value = def.value
     categoria.disabled = true
 }
-function resetCantidad(){
+function resetCantidad() {
     cantidad.value = ""
     cantidad.disabled = true
 }
