@@ -25,7 +25,7 @@ function camposTickets(accion) {
         borrar.classList.remove("disabled")
     }
 }
-// Ejecuto apenas carga la página
+// Ejecuto la función apenas carga la página
 camposTickets(0)
 // Compruebo que los campos nombre, apellido y correo estén completados
 form.addEventListener("keydown", function () {
@@ -49,21 +49,10 @@ form.addEventListener("keydown", function () {
             volverACorreo()
         }
     }
-    if(nombreVacio){
-        nombre.classList.add("incomplete")
-    }else{
-        nombre.classList.remove("incomplete")
-    }
-    if(apellidoVacio){
-        apellido.classList.add("incomplete")
-    }else{
-        apellido.classList.remove("incomplete")
-    }
-    if(!validarEmail()){
-        correo.classList.add("incomplete")
-    }else{
-        correo.classList.remove("incomplete")
-    }
+    // Resalto los campos que faltan completar
+    nombreVacio ? nombre.classList.add("incomplete") : nombre.classList.remove("incomplete");
+    apellidoVacio ? apellido.classList.add("incomplete") : apellido.classList.remove("incomplete");
+    validarEmail() ? correo.classList.remove("incomplete") : correo.classList.add("incomplete");
 })
 
 function volverACorreo(){
@@ -109,7 +98,7 @@ function resultadoCorrecto(valorFinal) {
 }
 
 function resultadoIncorrecto() {
-    totalPagar.placeholder = "Debe ingresar una cantidad correcta"
+    totalPagar.placeholder = "Debe ingresar una cantidad válida"
     totalPagar.classList.remove("bg-success", "text-white")
     totalPagar.classList.add("bg-warning")
     cantidad.value = ""
