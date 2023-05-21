@@ -247,7 +247,7 @@
                     </div>
                     <label for="cantidad" class="form-label col-sm-6">Cantidad
                         <div class="mb-3 ">
-                            <input type="number" min="1" class="form-control" id="cantidad" aria-describedby="cantidad"
+                            <input type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" min="1" class="form-control" id="cantidad" aria-describedby="cantidad"
                                 placeholder="cantidad">
                         </div>
                     </label>

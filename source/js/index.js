@@ -28,7 +28,7 @@ function camposTickets(accion) {
 // Ejecuto la función apenas carga la página
 camposTickets(0)
 // Compruebo que los campos nombre, apellido y correo estén completados
-form.addEventListener("keydown", function () {
+form.addEventListener("keyup", function () {
     let nombreVacio = nombre.value === ""
     let apellidoVacio = apellido.value === ""
     let correoVacio = correo.value === ""
