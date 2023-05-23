@@ -16,7 +16,7 @@
 
 <body>
 
-    <header class="bg-primary sticky-top container-fluid shadow top-0">
+    <header class="bg-darkBlue sticky-top container-fluid shadow top-0">
         <div class="container-xxl">
             <nav class="navbar navbar-expand-lg w-100">
                 <div class="container-fluid">
@@ -144,7 +144,7 @@
             <div class="container-xxl">
                 <div class="row row-cols-sm-2">
                     <img class="p-0 object-fit-cover" src="./source/img/honolulu.webp" alt="honolulu">
-                    <div class="bg-primary text-white p-3 vh-25">
+                    <div class="bg-darkBlue text-white p-3 vh-25">
                         <h2>Bs As - Octubre</h2>
                         <p>Buenos Aires es la provincia y localidad más grande del estado de Argentina. En los Estados
                             Unidos, honolulu es la más sureña de entre las principales ciudades estadounidenses. Aunque
@@ -189,7 +189,7 @@
             <div class="container-xxl">
                 <div class="row row-cols-sm-2">
                     <img class="p-0 object-fit-cover" src="./source/img/honolulu.webp" alt="honolulu">
-                    <div class="bg-primary text-white p-3 vh-25">
+                    <div class="bg-darkBlue text-white p-3 vh-25">
                         <h2>Bs As - Octubre</h2>
                         <p>Buenos Aires es la provincia y localidad más grande del estado de Argentina. En los Estados
                             Unidos, honolulu es la más sureña de entre las principales ciudades estadounidenses. Aunque
@@ -206,33 +206,10 @@
 
 
         <section id="tickets" class="container w-sm-50 p-2 w-900">
-            <div class="row d-flex justify-content-evenly gap-2">
-                <div class="card text-center rounded-0 border-primary mb-3 card-w " data-aos="flip-down">
-                    <div class="card-body text-secondary">
-                        <h5 class="card-title">Estudiante</h5>
-                        <p class="card-text text-dark">Tienen un descuento</p>
-                    </div>
-                    <p class="fw-bold p-2">80%</p>
-                    <p class="text-muted fs-10">* presentar documentación</p>
-                </div>
-                <div class="card text-center rounded-0 border-info mb-3 card-w" data-aos="flip-down">
-                    <div class="card-body text-secondary">
-                        <h5 class="card-title">Trainee</h5>
-                        <p class="card-text text-dark">Tienen un descuento</p>
-                    </div>
-                    <p class="fw-bold p-2">50%</p>
-                    <p class="text-muted fs-10">* presentar documentación</p>
-                </div>
-                <div class="card text-center rounded-0 border-warning mb-3 card-w" data-aos="flip-down">
-                    <div class="card-body text-secondary">
-                        <h5 class="card-title">Junior</h5>
-                        <p class="card-text text-dark">Tienen un descuento</p>
-                    </div>
-                    <p class="fw-bold p-2">15%</p>
-                    <p class="text-muted fs-10">* presentar documentación</p>
-                </div>
+            <div id="cards" class="row d-flex justify-content-evenly gap-2">
+
             </div>
-            <p class="text-center text-uppercase">venta <br><span class="fs-1 fw-bold">valor de ticket $200</span></p>
+            <p class="text-center text-uppercase">venta <br><span class="fs-1 fw-bold">valor de ticket $<span id="valorTicket"></span></span></p>
             <form id="form" class="row align-items-center justify-content-center">
                 <div id="campos" class="row">
                     <div class="mb-3 col-sm-6">
@@ -291,7 +268,15 @@
         </ul>
     </footer>
 
-    <script src="./source/js/index.js"></script>
+    <script src="./source/js/desactivacionCampos.js"></script>
+    <script src="./source/js/tarjetasDescuentos.js"></script>
+    <script src="./source/js/calculoValorTicket.js"></script>
+    <script src="./source/js/validacionCampos.js"></script>
+    <script src="./source/js/campoTotalPagar.js"></script>
+    <script src="./source/js/botonBorrar.js"></script>
+    <script src="./source/js/resets.js"></script>
+    <script src="./source/js/eventos.js"></script>
+    <script src="./source/js/variables.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>

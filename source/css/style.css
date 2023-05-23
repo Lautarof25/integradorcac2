@@ -16,7 +16,7 @@ html {
 }
 
 /* Colores modificados */
-.bg-primary {
+.bg-darkBlue {
     background-color: var(--darkBlue) !important;
 }
 
@@ -56,6 +56,16 @@ html {
 
 .disabled {
     background-color: #a3a3a3 !important;
+}
+
+.border-info:hover {
+    background-color: #0dcaf0;
+}
+.border-primary:hover {
+    background-color: #0d6efd;
+}
+.border-warning:hover {
+    background-color: #ffc107;
 }
 
 /* Generales */
