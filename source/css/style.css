@@ -59,13 +59,13 @@ html {
 }
 
 .border-info:hover {
-    background-color: #0dcaf0;
+    background-color: #0dcaf0!important;
 }
 .border-primary:hover {
-    background-color: #0d6efd;
+    background-color: #0d6efd!important;
 }
 .border-warning:hover {
-    background-color: #ffc107;
+    background-color: #ffc107!important;
 }
 
 /* Generales */

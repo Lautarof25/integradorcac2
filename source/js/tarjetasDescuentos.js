@@ -38,8 +38,18 @@ const valorTicketNumero = valorTicket.innerText = 200;
 let cardClass = document.querySelectorAll(".cardClass")
 
 cardClass.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+        card.style.transform = "scale(1.1, 1.1)"
+    })
+})
+
+cardClass.forEach(card => {
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "scale(1, 1)"
+    })
+})
+cardClass.forEach(card => {
     card.addEventListener("click", () => {
         categoria.options[card.id].selected = true
-        card.classList.add(colors[card.id])
     })
 })
