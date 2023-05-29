@@ -1,5 +1,5 @@
 // Desactivo los campos cantidad, categoria y botones 
-function camposTickets(accion) {
+function inputTickets(accion) {
     if (accion == 0) {
         cantidad.disabled = true
         categoria.disabled = true
@@ -13,4 +13,4 @@ function camposTickets(accion) {
     }
 }
 // Ejecuto la función apenas carga la página
-camposTickets(0)
+inputTickets(0)

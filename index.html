@@ -31,21 +31,21 @@
                     <div class="collapse navbar-collapse justify-content-end text-center" id="navbarNav">
                         <ul class="navbar-nav d-flex">
                             <li class="nav-item">
-                                <a class="nav-link text-white active link-info" aria-current="page"
+                                <a id="conference" class="nav-link text-white active link-info" aria-current="page"
                                     href="#conferencia">La
                                     conferencia</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-muted link-info" href="#oradores">Los oradores</a>
+                                <a id="speakers" class="nav-link text-muted link-info" href="#oradores">Los oradores</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-muted link-info" href="#publi">El lugar y la fecha</a>
+                                <a id="place_date" class="nav-link text-muted link-info" href="#publi">El lugar y la fecha</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-muted link-info" href="#formulario">Conviértete en orador</a>
+                                <a id="contact_form" class="nav-link text-muted link-info" href="#formulario">Conviértete en orador</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-success link-info" href="#tickets">Comprar tickets</a>
+                                <a id="ticketLayout" class="nav-link text-success link-info" href="#tickets">Comprar tickets</a>
                             </li>
                         </ul>
                     </div>
@@ -56,12 +56,12 @@
 
     <main id="main">
 
-        <section id="conferencia" class="carousel slide position-relative bg-dark" data-bs-ride="true">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#conferencia" data-bs-slide-to="0" class="active"
+        <section id="conferenceSection" class="carousel slide position-relative bg-dark" data-bs-ride="true">
+            <!-- <div class="carousel-indicators">
+                <button type="button" data-bs-target="#conferenceSection" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#conferencia" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#conferencia" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#conferenceSection" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#conferenceSection" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -75,11 +75,11 @@
                     <img src="./source/img/obelisco.webp" class="d-block w-100 opacity-50" alt="buenos_aires">
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#conferencia" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#conferenceSection" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#conferencia" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#conferenceSection" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
@@ -93,11 +93,11 @@
                     onclick="window.location.href='#formulario'">Quiero ser orador</button>
                 <button type="button" class="btn btn-success d-sm-inline-block d-none"
                     onclick="window.location.href='#tickets'">Comprar tickets</button>
-            </div>
+            </div> -->
         </section>
 
-        <section id="oradores" class="container-xl p-3">
-            <p class="text-center text-uppercase">Conoce a los <br><span class="fs-1">oradores</span></p>
+        <section id="speakerSection" class="container-xl p-3">
+            <!-- <p class="text-center text-uppercase">Conoce a los <br><span class="fs-1">oradores</span></p>
             <div class="row row-cols-1 row-cols-md-3 g-3">
                 <div class="col">
                     <div class="card" data-aos="fade-down-right">
@@ -136,12 +136,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </section>
 
 
         <section id="publi" data-aos="zoom-in">
-            <div class="container-xxl">
+            <!-- <div class="container-xxl">
                 <div class="row row-cols-sm-2">
                     <img class="p-0 object-fit-cover" src="./source/img/honolulu.webp" alt="honolulu">
                     <div class="bg-darkBlue text-white p-3 vh-25">
@@ -156,12 +156,11 @@
                         <button type="button" class="btn btn-outline-light">Conocé más</button>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </section>
 
-        <section id="formulario" class="container w-sm-50 p-2 w-900" data-aos="zoom-in-down">
-
-            <p class="text-center text-uppercase">Conviértete en un <br><span class="fs-1">orador</span></p>
+        <section id="contactSection" class="container w-sm-50 p-2 w-900" data-aos="zoom-in-down">
+            <!-- <p class="text-center text-uppercase">Conviértete en un <br><span class="fs-1">orador</span></p>
             <p class="text-center">Anótate como orador para dar una <a
                     href="https://www.yoscoaching.com/blog/que-es-la-presentacion-ignite-y-como-se-hace-guia-de-5-pasos-para-crear-la-tuya/"
                     target="_blank" class="text-dark"> charla ignite</a></a>. Cuéntanos de qué
@@ -182,7 +181,7 @@
                 <div class="mb-3">
                     <button class="btn btn-green col-12 text-white" type="button">Enviar</button>
                 </div>
-            </form>
+            </form> -->
         </section>
 
         <section id="tickets" class="container w-sm-50 p-2 w-900">
@@ -235,20 +234,14 @@
     </main>
 
     <footer class="align-items-center d-flex justify-content-center p-5">
-
-        <!-- <ul
-            class="d-flex justify-content-center align-items-center text-center flex-wrap flex-m-column gap-5 text-white m-0 p-0 list-unstyled ">
-            <li class="nav-item"><a class="nav-link text-white w-50px link-info" href="#">Preguntas frecuentes</a></li>
-            <li><a class="nav-link text-white w-50px link-info" href="#">Contáctanos</a></li>
-            <li><a class="nav-link text-white w-50px link-info" href="#">Prensa</a></li>
-            <li><a class="nav-link text-white w-50px link-info" href="#">Conferencias</a></li>
-            <li><a class="nav-link text-white w-50px link-info" href="#">Términos y condiciones</a></li>
-            <li><a class="nav-link text-white w-50px link-info" href="#">Privacidad</a></li>
-            <li><a class="nav-link text-white w-50px link-info" href="#">Estudiantes</a></li>
-        </ul> -->
     </footer>
 
-    <script src="./source/js/plantillas.js"></script>
+    <script src="./source/js/layouts.js"></script>
+    <script src="./source/js/conferenceLayout.js"></script>
+    <script src="./source/js/speakersLayout.js"></script>
+    <script src="./source/js/adLayout.js"></script>
+    <script src="./source/js/contactLayout.js"></script>
+    <script src="./source/js/ticketLayout.js"></script>
     <script src="./source/js/variables.js"></script>
     <script src="./source/js/desactivacionCampos.js"></script>
     <script src="./source/js/tarjetasDescuentos.js"></script>

@@ -1,5 +1,4 @@
 // Datos de las tarjetas
-
 const descuentos = {
     estudiante: 80,
     trainee: 50,
@@ -48,6 +47,7 @@ cardClass.forEach(card => {
         card.style.transform = "scale(1, 1)"
     })
 })
+
 cardClass.forEach(card => {
     card.addEventListener("click", () => {
         categoria.options[card.id].selected = true

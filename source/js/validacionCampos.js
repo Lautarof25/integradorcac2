@@ -5,7 +5,7 @@ form.addEventListener("keyup", function () {
     let correoVacio = correo.value === ""
 
     if (nombreVacio || apellidoVacio || correoVacio) {
-        camposTickets(0)
+        inputTickets(0)
         totalPagarOff()
         resetCantidad()
         resetCategoria()
@@ -13,9 +13,9 @@ form.addEventListener("keyup", function () {
     }
     else {
         if (validarEmail())
-            camposTickets(1)
+            inputTickets(1)
         else {
-            camposTickets(0)
+            inputTickets(0)
             totalPagarOff()
             volverACorreo()
         }
