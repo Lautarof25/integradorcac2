@@ -1,3 +1,4 @@
+const cards = document.querySelector("#cards")
 // Datos de las tarjetas
 const discounts = {
     estudiante: 80,
@@ -28,13 +29,12 @@ for (const [formacion, porcentaje] of Object.entries(discounts)) {
 `
     index++
 }
-
+// Agrego las tarjetas
 cards.innerHTML = htmlCards
-
+// Puedo modificar el valor del ticket
 const valueTicketToNumber = valorTicket.innerText = 200;
-
-let cardClass = document.querySelectorAll(".cardClass")
-
+// Agrego efectos a las tarjetas
+const cardClass = document.querySelectorAll(".cardClass")
 cardClass.forEach(card => {
     card.addEventListener("mouseenter", () => {
         card.style.transform = "scale(1.1, 1.1)"
