@@ -14,14 +14,14 @@ function summaryToPay() {
     if (checkQuantity(cantidad)) {
         if(cantidad.value == 1){
             var modalPOk =`
-            <p>El total a pagar por <strong> ${cantidad.value} </strong>boleto es: $<strong>${calculateTicket(valueTicketToNumber)}</strong></p>
+            <p>El total a pagar por <strong> ${cantidad.value} </strong>ticket es: $<strong>${calculateTicket(valueTicketToNumber)}</strong></p>
             <p>El resumen será enviado al email: <br><strong> ${correo.value}</strong></p>
             <p>A nombre de <strong> ${apellido.value}, ${nombre.value}</strong></p>
             
             `
         }else{
             var modalPOk =`
-            <p>El total a pagar por <strong> ${cantidad.value} </strong>boletos es: $<strong>${calculateTicket(valueTicketToNumber)}</strong></p>
+            <p>El total a pagar por <strong> ${cantidad.value} </strong>tickets es: $<strong>${calculateTicket(valueTicketToNumber)}</strong></p>
             <p>El resumen será enviado al email: <br><strong> ${correo.value}</strong></p>
             <p>A nombre de <strong> ${apellido.value}, ${nombre.value}</strong></p>
             
@@ -30,7 +30,9 @@ function summaryToPay() {
         correctResult(calculateTicket(valueTicketToNumber))
         modalTitle.innerHTML = modalTitleOk
         modalParragraph.innerHTML = modalPOk
-        cleanAllFields()
+        setTimeout(() => {
+            cleanAllFields()
+          }, 3000);
     }
     else {
         modalTitle.innerHTML = modalTitleWrong
