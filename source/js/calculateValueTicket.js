@@ -1,9 +1,9 @@
-function calculateTicket(value){
+function calculateTicket(value) {
     // Hago el calculo sin descuento
     let totalWithoutDiscount = Number(cantidad.value) * Number(value)
     // Hago el cálculo con descuento
     let totalFinal = categoria.value === "Estudiante"
-        ?  totalWithoutDiscount * ((100 - estudiante) / 100)
+        ? totalWithoutDiscount * ((100 - estudiante) / 100)
         : categoria.value === "Trainee"
             ? totalWithoutDiscount * ((100 - trainee) / 100)
             : totalWithoutDiscount * ((100 - junior) / 100)
@@ -11,25 +11,44 @@ function calculateTicket(value){
 }
 
 function summaryToPay() {
-    if (!checkQuantity(cantidad)){
-        wrongResult()
-    }
-    else{
+    if (checkQuantity(cantidad)) {
+        let modalPOk =`
+<p>El total a pagar por ${cantidad.value} boleto/s es: $${calculateTicket(valueTicketToNumber)}</p>
+
+`
         correctResult(calculateTicket(valueTicketToNumber))
-        modalQuantity.innerHTML = cantidad.value
-        modalTotal.innerHTML = calculateTicket(valueTicketToNumber)
-        setTimeout(() => {
-            cleanAllFields()
-          }, 3000);
+        modalTitle.innerHTML = modalTitleOk
+        modalParragraph.innerHTML = modalPOk
+        cleanAllFields()
+    }
+    else {
+        modalTitle.innerHTML = modalTitleWrong
+        modalParragraph.innerHTML = modalParragraphWrong
+        wrongResult()
+        cantidad.focus()
     }
 }
 
 function checkQuantity(cantidad) {
     // Devuelve true si el campo cantidad es correcto
     return cantidad.value >= 1 &&
-        cantidad.value != "" &&
-        Number.isInteger(Number(cantidad.value));
+        cantidad.value != "" && cantidad.value != 0;
 }
 
-const modalQuantity = document.querySelector("#modalQuantity")
-const modalTotal = document.querySelector("#modalTotal")
+const modalTitle = document.querySelector("#modalTitle")
+const modalParragraph = document.querySelector("#modalParragraph")
+
+let modalTitleOk =
+    `
+<h5 class="modal-title">🎉🎈¡Gracias por su compra!🎈🎉</h5>
+
+    `
+
+let modalTitleWrong =
+    `
+<h5 class="modal-title text-danger">😱❌¡Error!❌😱</h5>
+       
+`
+let modalParragraphWrong = `
+<p>Debe ingresar una cantidad válida</p>
+`
