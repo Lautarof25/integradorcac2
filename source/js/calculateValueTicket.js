@@ -13,9 +13,12 @@ function calculateTicket(value) {
 function summaryToPay() {
     if (checkQuantity(cantidad)) {
         let modalPOk =`
-<p>El total a pagar por ${cantidad.value} boleto/s es: $${calculateTicket(valueTicketToNumber)}</p>
+<p>El total a pagar por <strong> ${cantidad.value} </strong>boleto/s es: $<strong>${calculateTicket(valueTicketToNumber)}</strong></p>
+<p>El resumen será enviado al email: <br><strong> ${correo.value}</strong></p>
+<p>A nombre de <strong> ${apellido.value}, ${nombre.value}</strong></p>
 
 `
+
         correctResult(calculateTicket(valueTicketToNumber))
         modalTitle.innerHTML = modalTitleOk
         modalParragraph.innerHTML = modalPOk
