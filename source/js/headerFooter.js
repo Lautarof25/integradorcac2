@@ -18,21 +18,21 @@ const headerLayout =
                 <div class="collapse navbar-collapse justify-content-end text-center" id="navbarNav">
                     <ul class="navbar-nav d-flex">
                         <li class="nav-item">
-                            <a id="conference" class="nav-link text-white active link-info" aria-current="page"
+                            <a id="conference" class="linkItem nav-link text-white active link-info" aria-current="page"
                                 href="#conferenceSection">La
                                 conferencia</a>
                         </li>
                         <li class="nav-item">
-                            <a id="speakers" class="nav-link text-muted link-info" href="#speakerSection">Los oradores</a>
+                            <a id="speakers" class="linkItem nav-link text-muted link-info" href="#speakerSection">Los oradores</a>
                         </li>
                         <li class="nav-item">
-                            <a id="place_date" class="nav-link text-muted link-info" href="#publi">El lugar y la fecha</a>
+                            <a id="place_date" class="linkItem nav-link text-muted link-info" href="#publi">El lugar y la fecha</a>
                         </li>
                         <li class="nav-item">
-                            <a id="contact_form" class="nav-link text-muted link-info" href="#contactSection">Conviértete en orador</a>
+                            <a id="contact_form" class="linkItem nav-link text-muted link-info" href="#contactSection">Conviértete en orador</a>
                         </li>
                         <li class="nav-item">
-                            <a id="ticketLayout" class="nav-link text-success link-info" href="#tickets">Comprar tickets</a>
+                            <a id="ticketLayout" class="linkItem nav-link text-success link-info" href="#tickets">Comprar tickets</a>
                         </li>
                     </ul>
                 </div>

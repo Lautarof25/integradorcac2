@@ -1,13 +1,13 @@
-function resetCategoria() {
+function resetCategory() {
     categoria.value = def.value
     categoria.disabled = true
 }
-function resetCantidad() {
+function resetQuantity() {
     cantidad.value = ""
     cantidad.disabled = true
 }
 
-function totalPagarOff() {
+function inputFieldPaymentOff() {
     totalPagar.value = ""
     totalPagar.placeholder = "Total a Pagar: $"
     totalPagar.classList.remove("bg-success", "text-white")

@@ -1,24 +1,23 @@
 // Datos de las tarjetas
-const descuentos = {
+const discounts = {
     estudiante: 80,
     trainee: 50,
     junior: 15
 }
 
-const { estudiante, trainee, junior } = descuentos;
+const { estudiante, trainee, junior } = discounts;
 
-let posicion = 0;
+let index = 0;
 
 border = ["border-info", "border-primary", "border-warning"]
 colors = ["bg-info","bg-primary","bg-warning"]
-transparante = "bg-transparent"
 
 let htmlCards = ""
-for (const [formacion, porcentaje] of Object.entries(descuentos)) {
+for (const [formacion, porcentaje] of Object.entries(discounts)) {
     let capitalize = formacion.charAt(0).toUpperCase() + formacion.slice(1)
     htmlCards +=
         `
-    <div id="${posicion}" class="btn card cardClass text-center bg-transparent rounded-0 ${border[posicion]} mb-3 card-w " data-aos="flip-down">
+    <div id="${index}" class="btn card cardClass text-center bg-transparent rounded-0 ${border[index]} mb-3 card-w " data-aos="flip-down">
         <div class="card-body text-secondary">
             <h5 class="card-title">${capitalize}</h5>
             <p class="card-text text-dark">Tienen un descuento</p>
@@ -27,12 +26,12 @@ for (const [formacion, porcentaje] of Object.entries(descuentos)) {
         <p class="text-muted fs-10">* presentar documentación</p>
     </div>
 `
-    posicion++
+    index++
 }
 
 cards.innerHTML = htmlCards
 
-const valorTicketNumero = valorTicket.innerText = 200;
+const valueTicketToNumber = valorTicket.innerText = 200;
 
 let cardClass = document.querySelectorAll(".cardClass")
 

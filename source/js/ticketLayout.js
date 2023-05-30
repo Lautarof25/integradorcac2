@@ -41,7 +41,7 @@ const ticketsLayout =
         </div>
         <div class="mb-3 col-sm-12 d-sm-flex gap-4">
             <button class="btn btn-green w-100 order-1 mb-1 text-white disabled" type="button"
-                id="resumen">Resumen</button>
+                id="resumen" data-bs-toggle="modal" data-bs-target="#exampleModal">Resumen</button>
             <button class="btn btn-green w-100 mb-1 text-white disabled" type="reset"
                 id="borrar">Borrar</button>
         </div>
@@ -51,4 +51,4 @@ const ticketsLayout =
 
 `
 
-ticketSection.innerHTML = ticketsLayout
+ticketSection.innerHTML = ticketsLayout;
