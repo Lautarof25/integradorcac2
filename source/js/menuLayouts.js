@@ -17,14 +17,15 @@ function printTemplateWithId(id){
             adSection.innerHTML = adLayout;
             contactSection.innerHTML = contactLayout; 
             ticketSection.innerHTML = "";
+            AOS.init()
             break;
-        case "ticketLayout":
-            conferenceSection.innerHTML = "";
-            speakerSection.innerHTML = "";
-            adSection.innerHTML = "";
-            contactSection.innerHTML = ""; 
-            ticketSection.innerHTML = ticketsLayout;
-            break;
+        // case "ticketLayout":
+        //     conferenceSection.innerHTML = "";
+        //     speakerSection.innerHTML = "";
+        //     adSection.innerHTML = "";
+        //     contactSection.innerHTML = ""; 
+        //     ticketSection.innerHTML = ticketsLayout;
+        //     break;
     }
 }
 
