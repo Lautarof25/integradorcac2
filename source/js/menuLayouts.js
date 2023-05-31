@@ -16,7 +16,6 @@ function printTemplateWithId(id){
             speakerSection.innerHTML = speakerLayout;
             adSection.innerHTML = adLayout;
             contactSection.innerHTML = contactLayout; 
-            ticketSection.innerHTML = "";
             AOS.init()
             break;
         // case "ticketLayout":
